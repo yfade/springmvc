@@ -26,5 +26,8 @@
 </form>
 
 <a href="/hello/doGet/1">doGet</a>
+
+<hr>
+<a href="/hello/testRequestParam?userName=zhangsan&age=15">testRequestParam</a>
 </body>
 </html>

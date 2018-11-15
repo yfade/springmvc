@@ -1,10 +1,7 @@
 package com.stu.hello.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -13,6 +10,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/hello")
 public class HelloController {
+
+    @RequestMapping("/testRequestParam")
+    public String testRequestParam(@RequestParam("userName") String userName,
+                                   @RequestParam(value = "age",required = false,defaultValue = "0") int age){
+        System.out.println(userName+":"+age);
+        return "success";
+    }
 
     @RequestMapping(value = "/doPost",method = RequestMethod.POST)
     public String doPost(Integer id){
